@@ -15,6 +15,13 @@ const routers = [
             title: 'demo1'
         },
         component: (resolve) => require(['./views/demo/demo1.vue'], resolve)
+    },
+    {
+        path: '/demo-layout', //测试页面1
+        meta: {
+            title: 'demo-layout'
+        },
+        component: (resolve) => require(['./views/demo/demo-layout.vue'], resolve)
     }
 ];
 /**
