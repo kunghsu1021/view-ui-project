@@ -36,6 +36,12 @@
                     <Button @click="handleStart">Start View UI</Button>
                 </h2>
             </Col>
+            <Col span="24">
+                <h2>
+                    <p>跳转到demo1页面!</p>
+                    <router-link to="/demo1">demo1页面</router-link>
+                </h2>
+            </Col>
         </Row>
     </div>
 </template>
