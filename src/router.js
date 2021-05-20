@@ -22,6 +22,35 @@ const routers = [
             title: 'demo-layout'
         },
         component: (resolve) => require(['./views/demo/demo-layout.vue'], resolve)
+    },
+    {
+        //定义一个父子路由
+        path: '/layout',
+        component: (resolve) => require(['./views/demo/layout/layout-router.vue'], resolve),
+        children:[
+            {
+                path: '/layout/demo-layout1', //layout测试页面1
+                meta: {
+                    title: 'demo-layout1'
+                },
+                component: (resolve) => require(['./views/demo/layout/demo-layout1.vue'], resolve)
+            },
+            {
+                path: '/layout/demo-layout2', //layout测试页面2
+                meta: {
+                    title: 'demo-layout2'
+                },
+                component: (resolve) => require(['./views/demo/layout/demo-layout2.vue'], resolve)
+            },
+            {
+                path: '/layout/demo-card', //layout测试页面3
+                meta: {
+                    title: 'demo-card'
+                },
+                component: (resolve) => require(['./views/demo/layout/demo-card.vue'], resolve)
+            }
+        ]
+
     }
 ];
 /**
