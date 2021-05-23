@@ -48,7 +48,68 @@ const routers = [
                     title: 'demo-card'
                 },
                 component: (resolve) => require(['./views/demo/layout/demo-card.vue'], resolve)
+            },
+            {
+                
+                path: '/layout/demo-collapse', //layout测试页面3
+                meta: {
+                    title: 'demo-collapse'
+                },
+                component: (resolve) => require(['./views/demo/layout/demo-collapse.vue'], resolve)
+            },
+            {
+                
+                path: '/layout/demo-split', //layout测试页面3
+                meta: {
+                    title: 'demo-split'
+                },
+                component: (resolve) => require(['./views/demo/layout/demo-split.vue'], resolve)
+            },
+            {
+                
+                path: '/layout/demo-cell', //layout测试页面-cell
+                meta: {
+                    title: 'demo-cell'
+                },
+                component: (resolve) => require(['./views/demo/layout/demo-cell.vue'], resolve)
             }
+        ]
+
+    },
+    {
+        //定义一个父子路由
+        path: '/navigation',
+        component: (resolve) => require(['./views/demo/navigation/navigation-router.vue'], resolve),
+        children:[
+            {
+                path: '/navigation/demo-menu', //navigation测试页面1
+                meta: {
+                    title: 'demo-menu'
+                },
+                component: (resolve) => require(['./views/demo/navigation/demo-menu.vue'], resolve)
+            },
+            {
+                path: '/navigation/demo-tabs', //navigation测试页面2
+                meta: {
+                    title: 'demo-tabs'
+                },
+                component: (resolve) => require(['./views/demo/navigation/demo-tabs.vue'], resolve)
+            },
+            {
+                path: '/navigation/demo-dropdown', //navigation测试页面dropdown
+                meta: {
+                    title: 'demo-dropdown'
+                },
+                component: (resolve) => require(['./views/demo/navigation/demo-dropdown.vue'], resolve)
+            },
+            {
+                path: '/navigation/demo-page', //navigation测试页面page
+                meta: {
+                    title: 'demo-page'
+                },
+                component: (resolve) => require(['./views/demo/navigation/demo-page.vue'], resolve)
+            }
+            
         ]
 
     }
