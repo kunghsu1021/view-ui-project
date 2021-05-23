@@ -112,6 +112,36 @@ const routers = [
             
         ]
 
+    },
+    {
+        //定义一个父子路由
+        path: '/form',
+        component: (resolve) => require(['./views/demo/form/form-router.vue'], resolve),
+        children:[
+            {
+                path: '/form/demo-form1', //form测试页面1
+                meta: {
+                    title: 'demo-form1'
+                },
+                component: (resolve) => require(['./views/demo/form/demo-form1.vue'], resolve)
+            },
+            {
+                path: '/form/demo-form2', //form测试页面1
+                meta: {
+                    title: 'demo-form2'
+                },
+                component: (resolve) => require(['./views/demo/form/demo-form2.vue'], resolve)
+            },
+            {
+                path: '/form/demo-form3', //form测试页面1
+                meta: {
+                    title: 'demo-form3'
+                },
+                component: (resolve) => require(['./views/demo/form/demo-form3.vue'], resolve)
+            }
+            
+        ]
+
     }
 ];
 /**
