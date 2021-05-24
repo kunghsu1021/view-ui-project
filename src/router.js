@@ -138,8 +138,51 @@ const routers = [
                     title: 'demo-form3'
                 },
                 component: (resolve) => require(['./views/demo/form/demo-form3.vue'], resolve)
+            },
+            {
+                path: '/form/demo-table1', //form测试页面1
+                meta: {
+                    title: 'demo-table1'
+                },
+                component: (resolve) => require(['./views/demo/form/demo-table1.vue'], resolve)
+            },
+            {
+                path: '/form/demo-table2', //form测试页面1
+                meta: {
+                    title: 'demo-table2'
+                },
+                component: (resolve) => require(['./views/demo/form/demo-table2.vue'], resolve)
             }
             
+        ]
+
+    },
+    {
+        //定义一个父子路由
+        path: '/view',
+        component: (resolve) => require(['./views/demo/view/view-router.vue'], resolve),
+        children:[
+            {
+                path: '/form/demo-alert', //form测试页面1
+                meta: {
+                    title: 'demo-alert'
+                },
+                component: (resolve) => require(['./views/demo/view/demo-alert.vue'], resolve)
+            },
+            {
+                path: '/form/demo-message', //form测试页面1
+                meta: {
+                    title: 'demo-message'
+                },
+                component: (resolve) => require(['./views/demo/view/demo-message.vue'], resolve)
+            },
+            {
+                path: '/form/demo-modal', //form测试页面1
+                meta: {
+                    title: 'demo-modal'
+                },
+                component: (resolve) => require(['./views/demo/view/demo-modal.vue'], resolve)
+            }
         ]
 
     }
