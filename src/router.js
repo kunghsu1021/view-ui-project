@@ -48,6 +48,13 @@ const routers = [
                     title: 'demo-card'
                 },
                 component: (resolve) => require(['./views/demo/layout/demo-card.vue'], resolve)
+            },            
+            {
+                path: '/layout/demo-list', //layout测试页面3
+                meta: {
+                    title: 'demo-list'
+                },
+                component: (resolve) => require(['./views/demo/layout/demo-list.vue'], resolve)
             },
             {
                 
