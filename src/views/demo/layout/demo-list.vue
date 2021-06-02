@@ -40,6 +40,7 @@
     export default {
         data () {
             return {
+                count: 3,
                 sourceCheckArray:[
                             {id:"dx", name:"短信"},
                             {id:"wx", name:"微信"},
@@ -182,10 +183,33 @@
                 }
             },
             addStep() {
-                
+                //先new一个对象
+                var listDataItem = {};
+                this.count++;
+                listDataItem.title = "步骤" + this.count;
+                listDataItem.indeterminate= true;
+                listDataItem.checkAll=false;
+                listDataItem.checkArray = [
+                            {id:"dx", name:"短信"},
+                            {id:"wx", name:"微信"},
+                            {id:"zfb", name:"支付宝"},
+                            {id:"dy", name:"电邮"},
+                            {id:"sjqq", name:"手机QQ"}
+                        ];
+                listDataItem.checkAllGroup= [];//'短信', '微信'
+                this.listData.push(listDataItem);
+                //步骤数变更之后，要重新触发checkAllGroupChange方法
+                this.checkAllGroupChange([], 0);
             },
             deleteStep() {
-
+                var length = this.listData.length;
+                if(length > 1){
+                    //移除最后一个元素
+                    this.listData.pop();
+                    this.count--;
+                    //步骤数变更之后，要重新触发checkAllGroupChange方法
+                    this.checkAllGroupChange([], 0);
+                }
             }
         }
     }
