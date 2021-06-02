@@ -152,6 +152,13 @@ const routers = [
                     title: 'demo-table2'
                 },
                 component: (resolve) => require(['./views/demo/form/demo-table2.vue'], resolve)
+            },
+            {
+                path: '/form/demo-table3', //form测试页面1
+                meta: {
+                    title: 'demo-table3'
+                },
+                component: (resolve) => require(['./views/demo/form/demo-table3.vue'], resolve)
             }
             
         ]
