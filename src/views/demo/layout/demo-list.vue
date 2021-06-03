@@ -147,9 +147,23 @@
                         });
                         //将得到的新数组，赋予给当前的可选项数组
                         this.listData[i].checkArray = newcheckArray;
-
                         console.log("循环处理弟" + i + "个元素");
                         console.log(newcheckArray);
+                        //checkArray变了，checkAllGroup也要修改！
+                        var newCheckAllGroup = [];
+                        var nameArray = [];//字符串数组, 记录只能出现的name集合
+                        newcheckArray.forEach(element => {
+                            nameArray.push(element.name);
+                        });
+                        //遍历当前选中的值集合（checkAllGroup是一个字符串数组）
+                        for(var k = 0; k < this.listData[i].checkAllGroup.length; k++) {
+                            if(!nameArray.includes(this.listData[i].checkAllGroup[k])){
+                                continue;//过滤掉
+                            }
+                            newCheckAllGroup.push(this.listData[i].checkAllGroup[k]);
+                        }
+                        //重新设置checkAllGroup
+                        this.listData[i].checkAllGroup = newCheckAllGroup;
                     }
                          //将当前步骤的选中项放到hasChooseArray中，给下一步骤判断
                     hasChooseArray = hasChooseArray.concat(this.listData[i].checkAllGroup);
@@ -175,8 +189,8 @@
                             if(hasChooseArray.includes(element.name)){
                                 return;
                             }
-                               //假如sourceCheckArray中的元素，在hasChooseArray和checkArray都不存在，则重新添加2
-                                needToAddArray.push(element);
+                            //假如sourceCheckArray中的元素，在hasChooseArray和checkArray都不存在，则重新添加2
+                            needToAddArray.push(element);
                     });
                    console.log("needToAddArray" + needToAddArray);
                    this.listData[i].checkArray = this.listData[i].checkArray.concat(needToAddArray);
