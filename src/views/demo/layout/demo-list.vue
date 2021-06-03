@@ -94,27 +94,28 @@
         methods: {
             handleCheckAll (index) {
                 console.log("索引：" + index);
-                if (this.data[index].indeterminate) {
-                    this.data[index].checkAll = false;
+                if (this.listData[index].indeterminate) {
+                    this.listData[index].checkAll = false;
                 } else {
-                    this.data[index].checkAll = !this.data[index].checkAll;
+                    this.listData[index].checkAll = !this.listData[index].checkAll;
                 }
-                this.data[index].indeterminate = false;
+                this.listData[index].indeterminate = false;
 
-                if (this.data[index].checkAll) {
+                if (this.listData[index].checkAll) {
                     console.log('开始设置全选');
                     //设置全选，把整个数组赋予给checkAllGroup就是全选了
                     var allArray = [];
-                    if(this.data[index].checkArray && this.data[index].checkArray.length > 0){
-                        for(var j = 0; j < this.data[index].checkArray.length; j++) {
-                            allArray.push(this.data[index].checkArray[j].name);
+                    if(this.listData[index].checkArray && this.listData[index].checkArray.length > 0){
+                        for(var j = 0; j < this.listData[index].checkArray.length; j++) {
+                            allArray.push(this.listData[index].checkArray[j].name);
                         } 
                     }
                     //checkAllGroup这里只接受label,不能赋予其他属性，所以需要将label组织成一个数组赋值进去
-                    this.data[index].checkAllGroup = allArray;
+                    this.listData[index].checkAllGroup = allArray;
                 } else {
-                    this.data[index].checkAllGroup = [];
+                    this.listData[index].checkAllGroup = [];
                 }
+                this.checkAllGroupChange([], 0);
             },
             checkAllGroupChange (value,index) {//多选框选中事件
                 console.log("checkAllGroupChange");
