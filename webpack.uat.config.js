@@ -28,7 +28,7 @@ module.exports = merge(webpackBaseConfig, {
         }),
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: '"dev"' //为什么是这样定义的？这个是固定格式
+                NODE_ENV: '"uat"' //为什么是这样定义的？这个是固定格式
             }
         }),
         new HtmlWebpackPlugin({

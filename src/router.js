@@ -177,21 +177,21 @@ const routers = [
         component: (resolve) => require(['./views/demo/view/view-router.vue'], resolve),
         children:[
             {
-                path: '/form/demo-alert', //form测试页面1
+                path: '/view/demo-alert', //form测试页面1
                 meta: {
                     title: 'demo-alert'
                 },
                 component: (resolve) => require(['./views/demo/view/demo-alert.vue'], resolve)
             },
             {
-                path: '/form/demo-message', //form测试页面1
+                path: '/view/demo-message', //form测试页面1
                 meta: {
                     title: 'demo-message'
                 },
                 component: (resolve) => require(['./views/demo/view/demo-message.vue'], resolve)
             },
             {
-                path: '/form/demo-modal', //form测试页面1
+                path: '/view/demo-modal', //form测试页面1
                 meta: {
                     title: 'demo-modal'
                 },
