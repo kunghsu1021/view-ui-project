@@ -147,6 +147,20 @@ const routers = [
                 component: (resolve) => require(['./views/demo/form/demo-form3.vue'], resolve)
             },
             {
+                path: '/form/demo-form4', //form测试页面1
+                meta: {
+                    title: 'demo-form4'
+                },
+                component: (resolve) => require(['./views/demo/form/demo-form4.vue'], resolve)
+            },
+            {
+                path: '/form/demo-upload', //form测试页面1
+                meta: {
+                    title: 'demo-upload'
+                },
+                component: (resolve) => require(['./views/demo/form/demo-upload.vue'], resolve)
+            },
+            {
                 path: '/form/demo-table1', //form测试页面1
                 meta: {
                     title: 'demo-table1'
