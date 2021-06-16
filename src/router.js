@@ -213,6 +213,28 @@ const routers = [
             }
         ]
 
+    },
+    {
+        //定义一个父子路由
+        path: '/demo2',
+        component: (resolve) => require(['./views/demo2/index2.vue'], resolve),
+        children:[
+            {
+                path: '/demo2/page1',
+                meta: {
+                    title: 'demo2-page1'
+                },
+                component: (resolve) => require(['./views/demo2/page1.vue'], resolve)
+            },
+            {
+                path: '/demo2/page2',
+                meta: {
+                    title: 'demo2-page2'
+                },
+                component: (resolve) => require(['./views/demo2/page2.vue'], resolve)
+            }
+        ]
+
     }
 ];
 /**
