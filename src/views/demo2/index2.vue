@@ -1,14 +1,25 @@
 <style lang="less" scoped>
-
+//  .layout{
+//         border: 1px solid #d7dde4;
+//         background: #f5f7f9;
+//         position: relative;
+//         border-radius: 4px;
+//         overflow: hidden;
+//     }
+//     .layout-header-bar{
+//         background: #fff;
+//         box-shadow: 0 1px 1px rgba(0,0,0,.1);
+//     }
  
 </style>
 <template>
   <section class="admin-layout-container">
-      <div class="layout">
+    <div class="layout">
         <Layout>
-            <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed" style="background: rgb(73, 80, 96);">
+            <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
                 <div class="logo" >
                     <img :src="logo" width="100" v-if="!isCollapsed"/>
+                    <!-- 头像 -->
                     <Avatar icon="person" size="large" v-else/>
                 </div>
                 <Menu 
@@ -75,39 +86,19 @@
                 </div>            
             </Sider>
             <Layout>
-                <Header :style="{position: 'fixed',
-                        width: isCollapsed?'calc(100% - 78px)':'calc(100% - 200px)',
-                        padding: 0,
-                        display:'flex',
-                        flexDirection:'column',
-                        zIndex:20
-                    }" class="layout-header-bar">
-                    <div style="
-                        display:flex;
-                        align-tems:center;
-                        justify-content:space-between;
-                        position: relative;
-                        height:60px;
-                        line-height: 60px;
-                        z-index: 1;
-                        box-shadow: 0 2px 1px 1px rgba(100, 100, 100, 0.1);">
-                        <div style="display:flex;align-items:center;">
-                            <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px 0'}" type="navicon-round" size="24"></Icon>
-                            <span style="font-size:18px;font-weight:bold">{{user.name}}后台管理系统</span>
+                <Header>
+                    <div>
+                        <div>
+                            <Icon @click.native="collapsedSider" :class="rotateIcon" type="navicon-round" size="24"></Icon>
+                            <span style="font-size:18px;font-weight:bold;color:red;">{{user.name}}后台管理系统</span>
                         </div>
-                        <div style="margin-right:20px">
+                        <div>
                             <!-- <Button type="text" icon="person" size="large">个人中心</Button>
                             <Button type="text" icon="android-notifications" size="large" @click="clickNotice">消息通知</Button> -->
                             <Button type="text" icon="android-exit" size="large" @click="quit">退出系统</Button>
                         </div>
                     </div>     
-                    <div style="display: flex;
-                                position: relative;
-                                padding-left:10px;
-                                height: 40px;
-                                background: #f5f7f9;
-                                align-items: center;
-                                box-shadow: 0 2px 1px 1px rgba(100, 100, 100, 0.1);">
+                    <div>
                         <template v-for="(tab,tab_index) in tags">
                             <Tag type="dot" 
                             :closable="tab.closable" 
@@ -154,7 +145,7 @@ export default {
                 name: "Kunghsu"
             },
             logo:`${this.$qiniuFileUrl}${process.env.LOGO}`,
-            isCollapsed: false,
+            isCollapsed: false, //双向绑定的属性  是否隐藏Sider
             // ------------------------------  菜单操作开始  --------------------------------
             title:'首页',
             activeMenuName:'admin',
