@@ -18,6 +18,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "echarts": "^5.1.2",
     "view-design": "^4.3.0",
     "vue": "^2.5.16",
     "vue-nav-tabs": "^0.5.7",

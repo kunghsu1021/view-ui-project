@@ -37,7 +37,7 @@
           <Icon type="ios-filing" />
           testmenu2
         </template>
-        <!-- MenuGroup不是必须的 -->
+        <!-- MenuGroup不是必须的,假如你希望给某些菜单项分类的时候再用MenuGroup -->
         <MenuItem name="2-1">Option 5</MenuItem>
         <MenuItem name="2-2">Option 6</MenuItem>
       </Submenu>
@@ -50,17 +50,18 @@
       @on-contextmenu="handleContextMenu"
     >
       <!-- 遍历自定义的tabs数组进行渲染 -->
+      <template v-for="tab in tabs">
       <TabPane
         ref="tabPanes"
         :key="tab.component"
         :name="tab.component"
         :label="tab.component"
         v-if="tab.display"
-        v-for="tab in tabs"
         context-menu>
         <!-- component标签可以直接引入一个组件，一个组件就是一个页面 -->
         <component ref="tabComponents" :is="tab.component"></component>
       </TabPane>
+      </template>
       <template slot="contextMenu">
         <DropdownItem @click.native="closeOtherTabs">关闭其他</DropdownItem>
         <DropdownItem @click.native="closeAllTabs" style="color: #ed4014">关闭所有</DropdownItem>
@@ -217,6 +218,7 @@ a {
 
 .my-menu{
     height: 100%;
+    height: 800px;
 }
 .my-div{
     height: 100%;

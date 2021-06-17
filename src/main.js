@@ -8,6 +8,9 @@ import Routers from './router';//自定义路由，也是iview demo工程自动�
 import Util from './libs/util';
 import App from './app.vue';//引入首页组件，表示网站的入口
 import 'view-design/dist/styles/iview.css';//引入iview的样式
+// import echarts from 'echarts' //引入echarts，画图表
+import * as echarts from 'echarts';
+Vue.prototype.$echarts = echarts
 
 Vue.use(VueRouter);//加载路由组件
 Vue.use(ViewUI);//加载ViewUI组件
