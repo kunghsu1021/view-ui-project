@@ -1,5 +1,6 @@
 <template>
 <div>
+    <h1>展示echart的折线图例子</h1>
     <!-- 确认对话框 #
 快速弹出确认对话框，并且可以自定义按钮文字及异步关闭。 -->
     <Button @click="confirm">Normal</Button>

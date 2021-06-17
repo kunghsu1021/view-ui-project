@@ -1,5 +1,17 @@
 <template>
   <!-- 本例基于ivew的Menu组件+Tabs组件实现一个左侧菜单右边不变的效果。 -->
+  <layout>
+                <Header>
+                        <div>
+                            <Icon type="navicon-round" size="24"></Icon>
+                            <span style="font-size:18px;font-weight:bold;color: #d8ff00c4;">后台管理系统Index3</span>
+                           <Button type="text" icon="android-exit" @click="quit" 
+                           style="float: right;color: #fafd4a;">退出系统</Button>
+                        </div>
+                            <!-- <Button type="text" icon="person" size="large">个人中心</Button>
+                            <Button type="text" icon="android-notifications" size="large" @click="clickNotice">消息通知</Button> -->
+                </Header>
+
   <div class="my-div">
       <!-- <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed"> -->
     <Menu
@@ -56,6 +68,9 @@
       <Button @click="closeAllTabs" size="small" slot="extra">关闭所有</Button>
     </Tabs>
   </div>
+
+  </layout>
+
 </template>
 
 <script>
@@ -167,6 +182,9 @@ export default {
       //直接把数组置成空，就是关闭所有
       this.tabs = [];
     },
+    quit() {
+
+    }
   },
 };
 </script>
