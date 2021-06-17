@@ -113,8 +113,7 @@
                 </Header>                
                 <Content >
                     <!--保存组件状态到内存，避免重新渲染-->
-                    <!-- <keep-alive>
-                    </keep-alive>      
+                    <!--      
                     
                     :style="{
                     height: 'calc(100% - 100px)',
@@ -126,8 +125,9 @@
                     }"
                         -->
                         <!-- :key="routerPath" -->
-                    <router-view></router-view>    
-      
+                    <keep-alive>
+                              <router-view></router-view>    
+                    </keep-alive> 
                 </Content>
             </Layout>
         </Layout>

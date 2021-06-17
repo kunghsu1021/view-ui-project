@@ -235,6 +235,13 @@ const routers = [
             }
         ]
 
+    },
+    {
+        path: '/index3',
+        meta: {
+            title: 'index3'
+        },
+        component: (resolve) => require(['./views/demo2/index3.vue'], resolve)
     }
 ];
 /**

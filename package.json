@@ -1,6 +1,6 @@
 {
-  "name": "view-ui-project",
-  "version": "4.0.0",
+  "name": "kunghsu-view-ui-project",
+  "version": "1.0.0",
   "description": "A base project with Vue.js2、Vue-Router、webpack2 and with View UI 4.",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,10 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
-    "view-design": "^4.0.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "view-design": "^4.3.0",
     "vue": "^2.5.16",
+    "vue-nav-tabs": "^0.5.7",
     "vue-router": "^2.8.1",
     "vuex": "^3.6.2"
   },
