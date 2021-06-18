@@ -23,10 +23,10 @@
       <Submenu name="1">
         <template slot="title">
           <Icon type="ios-analytics" />
-          testmenu1
+          echarts样例
         </template>
         <MenuGroup title="菜单组1">
-          <MenuItem name="dynamic1">Option 1</MenuItem>
+          <MenuItem name="dynamic1">折线图样例</MenuItem>
           <MenuItem name="dynamic2">Option 2</MenuItem>
           <MenuItem name="dynamic3">Option 3</MenuItem>
           <MenuItem name="dynamic4">Option 4</MenuItem>

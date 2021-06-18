@@ -12,8 +12,13 @@ import 'view-design/dist/styles/iview.css';//引入iview的样式
 import * as echarts from 'echarts';
 Vue.prototype.$echarts = echarts
 
+//引入自定义的公共模块
+import COMMON from './utils/common';
+
+
 Vue.use(VueRouter);//加载路由组件
 Vue.use(ViewUI);//加载ViewUI组件
+Vue.use(COMMON);//import之后，必须要注册才能在各个组件中直接引用
 
 // 路由配置
 const RouterConfig = {
@@ -33,7 +38,8 @@ router.afterEach((to, from, next) => {
     window.scrollTo(0, 0);
 });
 
-new Vue({
+// window.Vue = Vue;
+window.V = new Vue({
     el: '#app', //定义挂载点
     router: router,
     render: h => h(App) //默认渲染app组件，即首页组件
