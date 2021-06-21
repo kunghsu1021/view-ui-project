@@ -5,6 +5,7 @@
                         <div>
                             <Icon type="navicon-round" size="24"></Icon>
                             <span style="font-size:18px;font-weight:bold;color: #d8ff00c4;">后台管理系统Index3</span>
+                            <p style="float: right;font-size:16px;font-weight:bold;color: #d8ff00c4;">{{currentTIme}}</p>
                            <Button type="text" icon="android-exit" @click="quit" 
                            style="float: right;color: #fafd4a;">退出系统</Button>
                         </div>
@@ -106,6 +107,7 @@ export default {
       ],
       contextData: null,
       mytheme: "dark", //设置自带的主题 默认是两个选择：light 或者 dark
+      currentTIme: ''
     };
   },
   methods: {
@@ -185,8 +187,35 @@ export default {
     },
     quit() {
 
+    },
+    currentTime() {
+      setInterval(this.formatDate, 500);
+    },
+    formatDate() {
+      let date = new Date();
+      let year = date.getFullYear(); // 年
+      let month = date.getMonth() + 1; // 月
+      let day = date.getDate(); // 日
+      let week = date.getDay(); // 星期
+      let weekArr = [ "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" ];
+      let hour = date.getHours(); // 时
+      hour = hour < 10 ? "0" + hour : hour; // 如果只有一位，则前面补零
+      let minute = date.getMinutes(); // 分
+      minute = minute < 10 ? "0" + minute : minute; // 如果只有一位，则前面补零
+      let second = date.getSeconds(); // 秒
+      second = second < 10 ? "0" + second : second; // 如果只有一位，则前面补零
+      this.currentTIme = `${year}/${month}/${day} ${hour}:${minute}:${second} ${weekArr[week]}`;
     }
   },
+  mounted() {
+    this.currentTime();
+  },
+  // 销毁定时器
+  beforeDestroy() {
+    if (this.formatDate) {
+      clearInterval(this.formatDate); // 在Vue实例销毁前，清除时间定时器
+    }
+  }
 };
 </script>
 
