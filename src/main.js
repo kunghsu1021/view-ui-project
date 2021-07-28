@@ -20,6 +20,16 @@ Vue.use(VueRouter);//加载路由组件
 Vue.use(ViewUI);//加载ViewUI组件
 Vue.use(COMMON);//import之后，必须要注册才能在各个组件中直接引用
 
+//cron demo依赖element-ui
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI);
+
+//全局引入
+import VueCron from 'vue-cron'
+Vue.use(VueCron);//使用方式：<vueCron></vueCron>
+
+
 // 路由配置
 const RouterConfig = {
     mode: 'history', //路由的模式，history:具有对url历史记录进行修改的功能

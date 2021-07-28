@@ -242,7 +242,22 @@ const routers = [
             title: 'index3'
         },
         component: (resolve) => require(['./views/demo2/index3.vue'], resolve)
-    }
+    },
+    {
+        //定义一个父子路由
+        path: '/other',
+        component: (resolve) => require(['./views/other/cron-router.vue'], resolve),
+        children:[
+            {
+                path: '/other/cron',
+                meta: {
+                    title: 'cron-page1'
+                },
+                component: (resolve) => require(['./views/other/cron/cron.vue'], resolve)
+            }
+        ]
+
+    },
 ];
 /**
  * 导出路由数组，提供给其他文件进行导入
