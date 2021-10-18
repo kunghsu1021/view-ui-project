@@ -246,7 +246,7 @@ const routers = [
     {
         //定义一个父子路由
         path: '/other',
-        component: (resolve) => require(['./views/other/cron-router.vue'], resolve),
+        component: (resolve) => require(['./views/other/other-router.vue'], resolve),
         children:[
             {
                 path: '/other/cron',
@@ -254,6 +254,13 @@ const routers = [
                     title: 'cron-page1'
                 },
                 component: (resolve) => require(['./views/other/cron/cron.vue'], resolve)
+            },
+            {
+                path: '/other/countdown',
+                meta: {
+                    title: 'countdown-demo'
+                },
+                component: (resolve) => require(['./views/other/countdown/countdown.vue'], resolve)
             }
         ]
 
